@@ -44,9 +44,11 @@
 			padding: $gap
 		width: percentage(1 / $totalColumns)
 
-=font($s: false, $w: false, $lh: false, $c: false, $t: false, $a: false, $ls: false, $st: false, $d: false)
+=font($s: false, $w: false, $lh: false, $c: false, $t: false, $a: false, $ls: false, $st: false, $d: false, $f: false)
 	@if $c
 		color: $c
+	@if $f
+		font-family: $f
 	@if $s
 		font-size: $s
 	@if $st

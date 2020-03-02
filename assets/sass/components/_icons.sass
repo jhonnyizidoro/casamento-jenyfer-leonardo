@@ -1,0 +1,38 @@
+@font-face
+	font-family: 'icon'
+	font-style: normal
+	font-weight: normal
+	src: url('/fonts/icon.ttf') format('truetype'), url('/fonts/icon.woff') format('woff'), url('/fonts/icon.svg') format('svg')
+
+.icon
+	display: inline-block
+	line-height: 1
+	font-family: 'icon', sans-serif
+	font-style: normal
+	font-variant: normal
+	font-weight: normal
+	text-transform: none
+
+.icon.icon--calendar::before
+	content: '\e900'
+
+.icon.icon--clock::before
+	content: '\e901'
+
+.icon.icon--envelope::before
+	content: '\e902'
+
+.icon.icon--facebook::before
+	content: '\e903'
+
+.icon.icon--heart::before
+	content: '\e904'
+
+.icon.icon--instagram::before
+	content: '\e905'
+
+.icon.icon--location-pin::before
+	content: '\e906'
+
+.icon.icon--whatsapp::before
+	content: '\e907'

@@ -1,13 +1,13 @@
-.card
-	+position(50%, 50%)
-	background: $white
-	border-radius: 20px
-	box-shadow: $shadow-1
-	padding: 50px
-	text-align: center
-	transform: translate(50%, -50%)
-	&__image
-		margin-bottom: 25px
-		width: 350px
-	&__content
-		+font(1.5rem, 600)
+.navbar
+	&__container
+		+flex(space-between, center)
+		padding: 15px 0
+	&__logo__image
+		height: 50px
+	&__link
+		background: transparent
+		border-bottom: 2px solid transparent
+		margin: 0 10px
+		transition: 200ms
+		&:hover
+			border-bottom-color: $orange

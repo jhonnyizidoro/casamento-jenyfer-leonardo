@@ -1,0 +1,46 @@
+.header
+	height: calc(100vh - 95px)
+	position: relative
+	&__background
+		+position(0, 0)
+		+cover
+	&__divider
+		+position($b: 0, $r: 0)
+		width: 100%
+	&__content
+		+position(45%, 50%)
+		+flex($d: column)
+		+font($c: $white, $a: center)
+		transform: translate(50%, -50%)
+	&__title
+		+font($f: 'Pacifico', $lh: 1.3)
+		text-shadow: $shadow-1
+		transform: rotate(-10deg)
+	&__large
+		font-size: 5rem
+	&__purple
+		color: $purple
+	&__subtitle
+		+font(1.1rem, $ls: 1px)
+		border-bottom: 1px solid $white
+		border-top: 1px solid $white
+		margin: 45px 0 25px
+		padding: 5px 0
+	&__icons
+		position: relative
+		&::after,
+		&::before
+			+pseudo
+			+size(50px, 2px)
+			+position(45%, 50%)
+		&::after
+			background: $white
+			transform: translateX(80px)
+		&::before
+			background: $purple
+			transform: translateX(-40px)
+	&__icon
+		font-size: 1.4rem
+		&:nth-child(2)
+			color: $purple
+			transform: translateX(-4px)
