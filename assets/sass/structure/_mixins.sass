@@ -18,7 +18,7 @@
 	@media only screen and (min-width: #{$fullhd-start})
 		@content
 
-=flex($j: false, $a: false, $d: false, $w: false, $g: false, $s: false)
+=flex($j: false, $a: false, $d: false, $w: false, $g: false, $s: false, $b: false)
 	@if $a
 		align-items: $a
 	display: flex
@@ -28,8 +28,10 @@
 		flex-wrap: $w
 	@if $j
 		justify-content: $j
-	@if $g or $s
+	@if $g or $s or $b
 		>*
+			@if $b
+				flex-basis: $b
 			@if $g
 				flex-grow: $g
 			@if $s

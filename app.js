@@ -29,8 +29,14 @@ app.use((req, res, next) => {
 	next()
 })
 
-//Rotas
+//Router
 routes(app)
+
+// error handler
+app.use((err, req, res, next) => {
+	res.status(err.status || 500)
+	res.render('error')
+})
 
 // Init Server
 app.listen(80, () => console.log('server On!'))
