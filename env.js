@@ -1,6 +1,12 @@
 module.exports = {
 	APP_NAME: 'Jenyfer e Leonardo',
 	GOOGLE_API_KEY: 'AIzaSyDCa_AjVSWpEZ3CVhhSUnE0EydPSR_KpNY',
+	DATABASE: {
+		HOST: 'localhost',
+		NAME: 'wedding',
+		USER: 'root',
+		PASSWORD: 'root',
+	},
 	EVENT: {
 		DAY: '21',
 		MONTH: '02',

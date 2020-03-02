@@ -1,7 +1,9 @@
-const routes = require('./index/index'),
-	error = require('./error/error')
+const index = require('./index/index'),
+	error = require('./error/error'),
+	guests = require('./guests/guests')
 
 module.exports = app => {
-	app.use('/', routes)
+	app.use('/', index)
+	app.use('/convidados', guests)
 	app.use('*', error)
 }

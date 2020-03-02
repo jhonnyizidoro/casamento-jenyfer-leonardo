@@ -1,11 +1,13 @@
 .header
 	height: calc(100vh - 95px)
+	overflow: hidden
 	position: relative
 	&__background
 		+position(0, 0)
 		+cover
 	&__divider
 		+position($b: 0, $r: 0)
+		transform: scaleX(1.001)
 		width: 100%
 	&__content
 		+position(45%, 50%)

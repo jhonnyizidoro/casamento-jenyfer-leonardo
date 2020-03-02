@@ -1,0 +1,6 @@
+if session.alert
+	.alert
+		.alert__modal
+			.alert__title=session.alert.type
+			.alert__content=session.alert.message
+			button.button.button--purple(type="button", aria-label="Fechar alerta") OK!

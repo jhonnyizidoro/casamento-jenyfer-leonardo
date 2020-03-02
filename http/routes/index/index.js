@@ -14,6 +14,7 @@ router.get('/', (req, res) => {
 		seo,
 		gallery
 	})
+	req.session.destroy()
 })
 
 module.exports = router

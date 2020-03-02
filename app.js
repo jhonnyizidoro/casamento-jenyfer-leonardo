@@ -3,7 +3,8 @@ const assets = require('express-asset-versions'),
 	routes = require('./http/routes/routes'),
 	helpers = require('./http/helpers/helpers'),
 	express = require('express'),
-	env = require('./env')
+	env = require('./env'),
+	session = require('express-session')
 
 //Init express
 const app = express()
@@ -20,12 +21,19 @@ app.enable('trust proxy')
 
 //Middleware
 app.use(compression())
+app.use(express.urlencoded({ extended: false }))
 app.use('/', express.static(`${__dirname}/public`))
 app.use('/', express.static(`${__dirname}/public/global`))
 app.use(assets('/', `${__dirname}/public`))
+app.use(session({
+	saveUninitialized: true,
+	secret: 'ecNewNodeJS',
+	resave: true,
+}))
 app.use((req, res, next) => {
 	global.host = `${req.protocol}://${req.get('host')}`
 	global.url = `${global.host}${req.url}`
+	res.locals.session = req.session
 	next()
 })
 
