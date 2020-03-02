@@ -10,16 +10,16 @@ section.about
 			.about__meta
 				.about__meta__block
 					.about__meta__icon.icon.icon--calendar
-					span.about__meta__text 01/01/2000
-				a.about__meta__block(href="#", rel="noopener", target="_blank")
+					span.about__meta__text=LEONARDO.BIRTH_DATE
+				a.about__meta__block(href=`https://fb.com/${LEONARDO.FACEBOOK}`, rel="noopener", target="_blank")
 					.about__meta__icon.icon.icon--facebook
-					span.about__meta__text fb.com/leoleoleo
+					span.about__meta__text=LEONARDO.FACEBOOK
 				.about__meta__block
 					.about__meta__icon.icon.icon--whatsapp
-					span.about__meta__text (41) 99999-9999
-				a.about__meta__block(href="#", rel="noopener", target="_blank")
+					span.about__meta__text=LEONARDO.WHATSAPP
+				a.about__meta__block(href=`https://instagram.com/${LEONARDO.INSTAGRAM}`, rel="noopener", target="_blank")
 					.about__meta__icon.icon.icon--instagram
-					span.about__meta__text @leoleoleo
+					span.about__meta__text @#{LEONARDO.INSTAGRAM}
 		.about__right
 			.about__content
 				img.about__image(data-src="/images/about/jenyfer.jpg", alt="Sobre a Jenyfer", title="Sobre a Jenyfer", loading="lazy")
@@ -29,16 +29,16 @@ section.about
 			.about__meta
 				.about__meta__block
 					.about__meta__icon.icon.icon--calendar
-					span.about__meta__text 01/01/2000
-				a.about__meta__block(href="#", rel="noopener", target="_blank")
+					span.about__meta__text=JENYFER.BIRTH_DATE
+				a.about__meta__block(href=`https://fb.com/${JENYFER.FACEBOOK}`, rel="noopener", target="_blank")
 					.about__meta__icon.icon.icon--facebook
-					span.about__meta__text fb.com/leoleoleo
+					span.about__meta__text=JENYFER.FACEBOOK
 				.about__meta__block
 					.about__meta__icon.icon.icon--whatsapp
-					span.about__meta__text (41) 99999-9999
-				a.about__meta__block(href="#", rel="noopener", target="_blank")
+					span.about__meta__text=JENYFER.WHATSAPP
+				a.about__meta__block(href=`https://instagram.com/${JENYFER.INSTAGRAM}`, rel="noopener", target="_blank")
 					.about__meta__icon.icon.icon--instagram
-					span.about__meta__text @leoleoleo
+					span.about__meta__text @#{JENYFER.INSTAGRAM}
 	include ../components/Divider
 	.container.about__container__bottom
 		.about__content

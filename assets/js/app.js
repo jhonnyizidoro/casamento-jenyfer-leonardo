@@ -1,18 +1,15 @@
-import {on} from "./functions/EventHandler";
-
 window.LazyLoad = require('./modules/LazyLoad')
+window.Gallery = require('./modules/Gallery')
+window.Mask = require('./modules/Mask')
 
 document.addEventListener('DOMContentLoaded', () => {
 	LazyLoad.observe()
 })
 
 window.addEventListener('load', () => {
-	const gallery = document.querySelector('.gallery')
-	const galleryButton = document.querySelector('.gallery__button')
-	const figures = document.querySelectorAll('.gallery__figure')
-	on('click', galleryButton, () => {
-		gallery.style.maxHeight = '5000px'
-		galleryButton.parentNode.removeChild(galleryButton)
-		gallery.classList.add('gallery--expanded')
-	})
+	Gallery.init()
+	Mask.init()
+	if (navigator.serviceWorker && !location.href.includes('localhost')) {
+		navigator.serviceWorker.register('/sw.js')
+	}
 })

@@ -1,0 +1,9 @@
+include ../components/Divider
+form.confirmation(action="/confirmation", method="POST")
+	.confirmation__title Confirme sua presença
+	input.confirmation__input(type="text", required, placeholder="Nome", aria-label="Nome", name="name")
+	input.confirmation__input(type="text", required, placeholder="CPF", aria-label="CPF", name="cpf", inputmode="numeric", data-mask="000.000.000-00")
+	input.confirmation__input(type="text", required, placeholder="Data de nascimento", aria-label="Data de nascimento", name="birth", inputmode="numeric", data-mask="00/00/0000")
+	input.confirmation__input(type="text", placeholder="Pedido de música", aria-label="Pedido de música", name="name")
+	button.button.button--orange(type="submit", aria-label="Enviar formulário") CONFIRMAR PRESENÇA
+include ../components/Divider

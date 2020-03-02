@@ -1,0 +1,16 @@
+section.event
+	.container.event__container
+		.event__left
+			.event__title__cursive Data e Hora
+			.event__block
+				.event__title__regular #[.icon.icon--location-pin] ENDEREÇO
+				.event__text #{EVENT.LOCATION.NAME} - #{EVENT.LOCATION.ADDRESS}. #{EVENT.LOCATION.CITY}
+			.event__block
+				.event__title__regular #[.icon.icon--clock] DATA E HORA
+				.event__text #{EVENT.DAY}/#{EVENT.MONTH}/#{EVENT.YEAR} - #{EVENT.STARTS_AT}
+			a.button.button--purple(href=`https://maps.google.com/?q=${EVENT.LOCATION.NAME}+${EVENT.LOCATION.ADDRESS}+${EVENT.LOCATION.CITY}`, target="_blank", rel="noopener") ABRIR NO MAPA #[.button--icon.icon.icon--location-pin]
+		.event__right
+			iframe.event__iframe(data-src=`https://www.google.com/maps/embed/v1/place?key=${GOOGLE_API_KEY}&q=${EVENT.LOCATION.NAME}+${EVENT.LOCATION.ADDRESS}+${EVENT.LOCATION.CITY}}`, loading="lazy", title="Google Maps")
+	.container.event__container__bottom
+		.event__title__cursive Sobre o evento
+		.event__text Praesent ac sem eget est egestas volutpat. Sed in libero ut nibh placerat accumsan. Suspendisse faucibus, nunc et pellentesque egestas, lacus ante convallis tellus, vitae iaculis lacus elit id tortor. Nam eget dui. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; In ac dui quis mi consectetuer lacinia.Praesent ac sem eget est egestas volutpat. Sed in libero ut nibh placerat accumsan. Suspendisse faucibus, nunc et pellentesque egestas, lacus ante convallis tellus, vitae iaculis lacus elit id tortor. Nam eget dui. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; In ac dui#[br]quis mi consectetuer lacinia.Praesent ac sem eget est egestas volutpat. Sed in libero ut nibh placerat accumsan. Suspendisse faucibus, nunc et pellentesque egestas, lacus ante convallis tellus, vitae iaculis lacus elit id tortor. Nam eget dui. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; In ac dui quis mi consectetuer lacinia.
