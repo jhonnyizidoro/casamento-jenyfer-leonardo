@@ -28,3 +28,29 @@
 		transform: translateY(1px)
 	&__meta__text
 		font-size: .9rem
+
++tablet
+	.about
+		&__title
+			font-size: 2rem
+		&__title__cursive
+			margin: 20px 0
+		&__container,
+		&__content
+			+columns(1)
+			text-align: center
+		&__content--reverse
+			flex-direction: column-reverse
+			border-top: 1px solid $light
+			margin-top: 50px
+			padding-top: 50px
+		&__left
+			padding-right: 0
+		&__right
+			padding-left: 0
+		&__image
+			margin-top: 20px
+		&__meta
+			flex-direction: column
+		&__meta__block
+			margin: 10px 0

@@ -1,0 +1,35 @@
+.hamburger
+	+position(20px, 15px, $p: fixed)
+	cursor: pointer
+	display: none
+	height: 30px
+	z-index: 4
+	&__menu,
+	&__menu::after,
+	&__menu::before
+		+size(2.5rem, 4px)
+		background: $orange
+	&__menu
+		transform: translateY(12px)
+		&::after,
+		&::before
+			+pseudo
+			left: 0
+			transition: 150ms
+		&::after
+			top: 12px
+		&::before
+			bottom: 12px
+	&.is-active
+		.hamburger__menu
+			background: transparent
+			&::after
+				top: 0
+				transform: rotate(45deg)
+			&::before
+				bottom: 0
+				transform: rotate(-45deg)
+
++tablet
+	.hamburger
+		display: block
