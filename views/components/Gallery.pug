@@ -1,0 +1,6 @@
+.container
+	section.gallery
+		each image in gallery
+			figure.gallery__figure
+				img.gallery__image(data-src=`/images/gallery/${image}`, title=`Imagem de Jenyfer e Leonardo - ${image}`, alt=`Imagem de Jenyfer e Leonardo - ${image}`, loading="lazy")
+	button.button.button--purple.gallery__button VEJA MAIS FOTOS LINDAS #[.button--icon.icon.icon--down]

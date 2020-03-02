@@ -1,14 +1,18 @@
-const express = require('express')
-const router = express.Router()
+const express = require('express'),
+	router = express.Router(),
+	{readdirSync} = require('fs'),
+	path = require('path')
 
 router.get('/', (req, res) => {
 	const seo = {
-		title: 'Home',
-		description: 'The best SEO optimized Progressive Web App!',
-		keywords: ['seo', 'optimized', 'pwa', 'progressive', 'web', 'app', 'home', 'pug', 'express', 'gulp', 'node', 'sass'],
+		title: 'Jenyfer e Leonardo | Site do Casamento',
+		description: 'Site para o grande dia de Jenyfer e Leonardo. Veja como vai funcionar o evento, peça uma música e confirme sua presença. Também é possível nos presentear por aqui!',
+		keywords: 'site de casamento, lista de presentes, jenyfer e leonardo',
 	}
+	const gallery = readdirSync(`${path.dirname(require.main.filename)}/assets/images/gallery`)
 	res.render('index', {
-		seo
+		seo,
+		gallery
 	})
 })
 

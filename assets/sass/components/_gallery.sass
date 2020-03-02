@@ -1,0 +1,32 @@
+.gallery
+	+flex($w: wrap, $g: 1)
+	margin-bottom: 250px
+	max-height: 1400px
+	overflow: hidden
+	transition: 5000ms $cubic-bezier
+	&__figure
+		height: 40vh
+		padding: 10px
+		&:hover
+			.gallery__image
+				box-shadow: $shadow-2
+				filter: grayscale(1)
+				transform: scale(1.02) rotate(-1deg)
+	&__image
+		box-shadow: $shadow-1
+		max-height: 100%
+		min-width: 100%
+		object-fit: cover
+		transition: 1500ms $cubic-bezier
+	&__button
+		+position($b: 50px, $r: 50%)
+		transform: translateX(50%)
+		&:hover
+			transform: translateX(50%) skew(-10deg)
+	&::after
+		+pseudo
+		+size(100%, 350px)
+		+position($b: 0, $r: 0)
+		background: linear-gradient(to bottom, rgba($white, 0) 0%, rgba($white, .88) 75%, $white 100%)
+	&--expanded::after
+		display: none
