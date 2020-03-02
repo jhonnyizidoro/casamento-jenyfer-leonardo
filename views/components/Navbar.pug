@@ -5,8 +5,8 @@ nav.navbar
 		a.navbar__logo__link(href="/")
 			img.navbar__logo__image(src="/images/logo.svg", alt=`Logo ${APP_NAME}`, title=`Logo ${APP_NAME}`)
 		.navbar__links
-			a.navbar__link(href="#") NOSSA HISTÓRIA
-			a.navbar__link(href="#") LISTA DE PRESENTES
-			a.navbar__link(href="#") GALERIA
-			a.navbar__link(href="#") CONFIRMAR PRESENÇA
-			a.navbar__link(href="#") SOBRE O CASAMENTO
+			.navbar__link(data-scroll=".about") NOSSA HISTÓRIA
+			.navbar__link(data-scroll=".gifts") LISTA DE PRESENTES
+			.navbar__link(data-scroll=".gallery") GALERIA
+			.navbar__link(data-scroll=".confirmation") CONFIRMAR PRESENÇA
+			.navbar__link(data-scroll=".event") SOBRE O CASAMENTO

@@ -41,6 +41,7 @@
 		"imagemin-svgo": "^7.1.0",
 		"imagemin-zopfli": "^6.0.0",
 		"imask": "^6.0.3",
+		"jump.js": "^1.0.2",
 		"pump": "^3.0.0",
 		"vinyl-buffer": "^1.0.1",
 		"vinyl-source-stream": "^2.0.0"
