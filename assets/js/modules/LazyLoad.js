@@ -1,21 +1,21 @@
-const observe = imagesSelector => {
-	const images = document.querySelectorAll(`${imagesSelector} img, ${imagesSelector}, ${imagesSelector} iframe`)
+const observe = () => {
+	const elements = document.querySelectorAll('*[loading="lazy"]')
 	const observer = new IntersectionObserver(entries => {
 		entries.forEach(entry => {
 			if (entry.isIntersecting) {
-				changeImageSrc(entry.target)
+				changeElementSrc(entry.target)
 			}
 		})
 	})
-	images.forEach(image => {
+	elements.forEach(image => {
 		observer.observe(image)
 	})
 }
 
-const changeImageSrc = image => {
-	if (image.src === '' && image.dataset.src) {
-		image.src = image.dataset.src
-		delete image.dataset.src
+const changeElementSrc = element => {
+	if (element.src === '' && element.dataset.src) {
+		element.src = element.dataset.src
+		delete element.dataset.src
 	}
 }
 

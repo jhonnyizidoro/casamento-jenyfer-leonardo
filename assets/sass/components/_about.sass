@@ -1,0 +1,28 @@
+.about
+	margin: 80px 0
+	&__title
+		+font(2.5rem, $a: center, $f: 'Open Sans Condensed')
+		margin-bottom: 30px
+	&__container,
+	&__content
+		+columns(2)
+	&__left
+		padding-right: 10px
+	&__right
+		padding-left: 10px
+	&__title__cursive
+		+font(5rem, $c: $orange, $f: 'Great Vibes')
+	&__text
+		font-size: 1.1rem
+		padding: 0 10px
+	&__image
+		box-shadow: $shadow-2
+	&__meta
+		+flex(space-around)
+		border: 1px solid $light
+		color: $purple
+		margin-top: 20px
+		padding: 15px 0
+	&__meta__icon
+		margin-right: 5px
+		transform: translateY(1px)

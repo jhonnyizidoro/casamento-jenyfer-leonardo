@@ -1,2 +1,11 @@
 .button
 	border: none
+	display: inline-block
+	transition: 250ms
+	&--purple
+		+font(1.1rem, $c: $white)
+		background: $purple
+		box-shadow: $shadow-1
+		padding: 15px 30px
+		&:hover
+			transform: skew(-10deg)

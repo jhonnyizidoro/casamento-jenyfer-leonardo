@@ -1,0 +1,21 @@
+.gifts
+	&__header
+		position: relative
+	&__image
+		width: 100%
+	&__title
+		+font(5rem, $f: 'Pacifico', $lh: 1.3, $c: $white)
+		+position(50%, 50%)
+		text-shadow: $shadow-1
+		transform: translate(50%, -50%)
+	&__block
+		padding-top: 50px
+		text-align: center
+		&:first-of-type
+			border-bottom: 1px solid $light
+			padding-bottom: 50px
+	&__block__title
+		+font(2.5rem, $f: 'Open Sans Condensed')
+	&__block__text
+		color: $purple
+		margin: 10px 0 20px
