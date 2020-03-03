@@ -48,8 +48,21 @@ const confirmGuest = guest => new Promise((resolve, reject) => {
 	})
 })
 
+const getProducts = () => new Promise((resolve, reject) => {
+	const conn = getConnection()
+	const query = 'SELECT p.*, c.name AS category FROM producs AS p JOIN categories AS c ON p.category_id = c.id'
+
+	conn.query(query, (error, result) => {
+		if (error) {
+			reject(error.sqlMessage)
+		} else {
+			resolve(result)
+		}
+	})
+})
 
 module.exports = {
 	confirmGuest,
 	getConfirmedGuests,
+	getProducts,
 }
