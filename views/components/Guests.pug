@@ -1,0 +1,15 @@
+.container
+	section.guests
+		h1.guests__title CONVIDADOS QUE JÁ CONFIRMARAM#[br] PRESENÇA
+		.guests__content
+			.guests__row
+				.guests__column #
+				.guests__column NOME
+				.guests__column MÚSICA
+				.guests__column DATA
+			each guest in guests
+				.guests__row
+					.guests__column=guest.id
+					.guests__column=guest.name.toUpperCase()
+					.guests__column=guest.song.toUpperCase()
+					.guests__column=formatDate(guest.date)

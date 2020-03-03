@@ -5,8 +5,11 @@ nav.navbar
 		a.navbar__logo__link(href="/")
 			img.navbar__logo__image(src="/images/logo.svg", alt=`Logo ${APP_NAME}`, title=`Logo ${APP_NAME}`)
 		.navbar__links
-			.navbar__link(data-scroll=".about") NOSSA HISTÓRIA
-			.navbar__link(data-scroll=".gifts") LISTA DE PRESENTES
-			.navbar__link(data-scroll=".gallery") GALERIA
-			.navbar__link(data-scroll=".confirmation") CONFIRMAR PRESENÇA
-			.navbar__link(data-scroll=".event") SOBRE O CASAMENTO
+			if path === '/'
+				.navbar__link(data-scroll=".about") NOSSA HISTÓRIA
+				.navbar__link(data-scroll=".gifts") LISTA DE PRESENTES
+				.navbar__link(data-scroll=".gallery") GALERIA
+				.navbar__link(data-scroll=".confirmation") CONFIRMAR PRESENÇA
+				.navbar__link(data-scroll=".event") SOBRE O CASAMENTO
+			else
+				a.navbar__link(href="/") PÁGINA INICIAL

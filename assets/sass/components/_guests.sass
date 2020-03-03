@@ -1,0 +1,14 @@
+.guests
+	margin-bottom: 50px
+	&__title
+		+font(2.5rem, 300, $a: center, $f: 'Open Sans Condensed')
+		margin: 30px 0
+	&__content
+		box-shadow: $shadow-1
+	&__row
+		+flex($g: 1, $b: 0)
+		padding: 15px
+		&:nth-child(1)
+			font-weight: bold
+		&:nth-child(odd)
+			background: darken($white, 5%)

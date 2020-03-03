@@ -33,6 +33,7 @@ app.use(session({
 app.use((req, res, next) => {
 	global.host = `${req.protocol}://${req.get('host')}`
 	global.url = `${global.host}${req.url}`
+	global.path = req.url
 	res.locals.session = req.session
 	next()
 })
@@ -42,6 +43,7 @@ routes(app)
 
 // error handler
 app.use((err, req, res, next) => {
+	console.log(err)
 	res.status(err.status || 500)
 	res.render('error')
 })

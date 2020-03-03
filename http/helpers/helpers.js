@@ -1,3 +1,5 @@
+const formatDate = date => `${date.getDate()}/${date.getMonth() + 1}/${date.getFullYear()} - ${date.getUTCHours()}:${date.getUTCMinutes()}`
+
 //Examples: https://jsonld.com/
 //Validator: https://search.google.com/structured-data/testing-tool
 //Google docs: https://developers.google.com/search/reference/overview
@@ -36,4 +38,5 @@ const getSchemaJSON = () => {
 
 module.exports = {
 	getSchemaJSON,
+	formatDate
 }
