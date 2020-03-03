@@ -1,6 +1,12 @@
 const init = () => {
 
-	const date = new Date(document.querySelector('.countdown').dataset.target).getTime()
+	const countdown = document.querySelector('.countdown')
+
+	if (!countdown) {
+		return
+	}
+
+	const date = new Date(countdown.dataset.target).getTime()
 	const numbers = document.querySelectorAll('.countdown__number')
 
 	setInterval(() => {

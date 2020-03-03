@@ -5,7 +5,7 @@ nav.navbar
 		a.navbar__logo__link(href="/")
 			img.navbar__logo__image(src="/images/logo.svg", alt=`Logo ${APP_NAME}`, title=`Logo ${APP_NAME}`)
 		.navbar__links
-			if path === '/'
+			if !path.match(/(convidados|produtos)/i)
 				.navbar__link(data-scroll=".about") NOSSA HISTÓRIA
 				.navbar__link(data-scroll=".gifts") LISTA DE PRESENTES
 				.navbar__link(data-scroll=".gallery") GALERIA
