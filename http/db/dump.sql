@@ -1,0 +1,21 @@
+DROP SCHEMA IF EXISTS wedding;
+CREATE DATABASE wedding CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+USE wedding;
+
+DROP TABLE IF EXISTS confirmations;
+DROP TABLE IF EXISTS products;
+
+CREATE table confirmations (
+    id   INT PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(255) UNIQUE NOT NULL,
+    song VARCHAR(255) DEFAULT NULL,
+    date TIMESTAMP    DEFAULT NOW()
+);
+
+CREATE TABLE products (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(255) UNIQUE NOT NULL,
+    value FLOAT NOT NULL,
+    category VARCHAR(255) NOT NULL,
+    image MEDIUMTEXT NOT NULL
+);

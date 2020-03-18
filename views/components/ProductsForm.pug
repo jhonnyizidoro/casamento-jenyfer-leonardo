@@ -1,0 +1,12 @@
+include ../components/Divider
+form.default(action="/produtos", method="POST", enctype="multipart/form-data")
+	.default__title Cadastro de produto
+	input.default__file(type="file", required, data-placeholder="SELECIONAR IMAGEM", aria-label="Clique para selecionar uma imagem", name="image", accept="image/jpg,image/jpeg,image/png")
+	input.default__input(type="text", required, placeholder="Nome do produto", aria-label="Nome do produto", name="name")
+	input.default__input(type="text", required, placeholder="Valor do produto", aria-label="Valor do produto", name="value", data-mask="money")
+	select.default__select(required, aria-label="Categoria do produto", name="category")
+		option(value="") Selecione a categoria
+		each category in ['Eletrodomésticos', 'Celulares', 'Eletrônicos', 'Cama, Mesa e Banho', 'Casa e Cozinha', 'Ferramentas e Jardim', 'Beleza e Saúde', 'Móveis e Decoração', 'Esporte e Lazer', 'Brinquedos']
+			option=category
+	button.button.button--orange(type="submit", aria-label="Enviar formulário") CADASTRAR PRODUTO
+include ../components/Divider

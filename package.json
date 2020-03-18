@@ -18,6 +18,7 @@
 		"compression": "^1.7.4",
 		"express": "^4.17.1",
 		"express-asset-versions": "^0.1.2",
+		"express-fileupload": "^1.1.6",
 		"express-session": "^1.17.0",
 		"mysql": "^2.18.1",
 		"pug": "^2.0.4"
@@ -44,6 +45,7 @@
 		"imagemin-zopfli": "^6.0.0",
 		"jump.js": "^1.0.2",
 		"pump": "^3.0.0",
+		"vanilla-masker": "^1.2.0",
 		"vinyl-buffer": "^1.0.1",
 		"vinyl-source-stream": "^2.0.0"
 	}

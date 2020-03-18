@@ -1,8 +1,14 @@
-const formatDate = date => `${date.getDate()}/${date.getMonth() + 1}/${date.getFullYear()} - ${date.getUTCHours()}:${date.getUTCMinutes()}`
+const formatDate = date => {
+	const formatted = {
+		day: `0${date.getDate()}`.slice(-2),
+		month: `0${date.getMonth() + 1}`.slice(-2),
+		year: date.getFullYear(),
+		hours: `0${date.getUTCHours()}`.slice(-2),
+		minutes: `0${date.getUTCMinutes()}`.slice(-2),
+	}
+	return `${formatted.day}/${formatted.month}/${formatted.year} - ${formatted.hours}:${formatted.minutes}`
+}
 
-//Examples: https://jsonld.com/
-//Validator: https://search.google.com/structured-data/testing-tool
-//Google docs: https://developers.google.com/search/reference/overview
 const getSchemaJSON = () => {
 	return `
 		{

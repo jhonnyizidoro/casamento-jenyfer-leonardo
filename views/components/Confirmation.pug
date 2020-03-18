@@ -1,7 +1,7 @@
 include ../components/Divider
-form.confirmation(action="/convidados", method="POST")
-	.confirmation__title Confirme sua presença
-	input.confirmation__input(type="text", required, placeholder="Nome completo", aria-label="Nome completo", name="name")
-	input.confirmation__input(type="text", placeholder="Pedido de música", aria-label="Pedido de música", name="song")
+form.default(action="/convidados", method="POST")
+	.default__title Confirme sua presença
+	input.default__input(type="text", required, placeholder="Nome completo", aria-label="Nome completo", name="name")
+	input.default__input(type="text", placeholder="Pedido de música", aria-label="Pedido de música", name="song")
 	button.button.button--orange(type="submit", aria-label="Enviar formulário") CONFIRMAR PRESENÇA
 include ../components/Divider

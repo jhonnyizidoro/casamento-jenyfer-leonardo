@@ -4,7 +4,8 @@ const assets = require('express-asset-versions'),
 	helpers = require('./http/helpers/helpers'),
 	express = require('express'),
 	env = require('./env'),
-	session = require('express-session')
+	session = require('express-session'),
+	fileUpload = require('express-fileupload')
 
 //Init express
 const app = express()
@@ -25,6 +26,7 @@ app.use(express.urlencoded({ extended: false }))
 app.use('/', express.static(`${__dirname}/public`))
 app.use('/', express.static(`${__dirname}/public/global`))
 app.use(assets('/', `${__dirname}/public`))
+app.use(fileUpload({}))
 app.use(session({
 	saveUninitialized: true,
 	secret: 'ecNewNodeJS',

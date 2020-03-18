@@ -1,19 +1,40 @@
-.confirmation
+.default
 	+flex($d: column)
 	margin: 0 auto
 	width: 400px
 	&__title
 		+font(3rem, $c: $purple, $f: 'Great Vibes', $a: center)
 		margin-bottom: 10px
-	&__input
+	&__input,
+	&__select,
+	&__file
+		margin-bottom: 7px
+		&:focus
+			outline: none
+	&__input,
+	&__select
 		+font(1.5rem, $f: 'Open Sans Condensed')
 		border: 1px solid $light
-		margin-bottom: 7px
 		padding: 10px 7px
 		&::placeholder
 			color: $light
+	&__file
+		box-shadow: $shadow-1
+		padding: 12px 0
+		position: relative
+		transition: 250ms
+		&:hover
+			transform: skew(-10deg)
+		&::after
+			+font(1.1rem, $c: $white)
+			+position(0, 0)
+			+size(100%)
+			+flex(center, center)
+			background: $purple
+			content: attr(data-placeholder)
+			cursor: pointer
 
 +tablet
-	.confirmation
+	.default
 		margin: 0 5%
 		width: 90%

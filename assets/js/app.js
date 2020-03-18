@@ -4,6 +4,7 @@ window.Countdown = require('./modules/Countdown')
 window.Navbar = require('./modules/Navbar')
 window.Scroll = require('./modules/Scroll')
 window.Alert = require('./modules/Alert')
+window.Input = require('./modules/Input')
 
 document.addEventListener('DOMContentLoaded', () => {
 	LazyLoad.observe()
@@ -15,6 +16,8 @@ window.addEventListener('load', () => {
 	Navbar.init()
 	Scroll.init()
 	Alert.init()
+	Input.mask()
+	Input.file()
 	if (navigator.serviceWorker && !location.href.includes('localhost')) {
 		navigator.serviceWorker.register('/sw.js')
 	}
