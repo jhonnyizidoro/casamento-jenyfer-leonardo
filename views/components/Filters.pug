@@ -1,0 +1,8 @@
+.container
+	form.search(action="/produtos", method="GET")
+		input.search__input(type="text", placeholder="Produto", aria-label="Nome do produto", name="name", value=getParam('name'))
+		select.search__select(aria-label="Categoria do produto", name="category")
+			option(value="") Selecione a categoria
+			each category in ['Eletrodomésticos', 'Celulares', 'Eletrônicos', 'Cama, Mesa e Banho', 'Casa e Cozinha', 'Ferramentas e Jardim', 'Beleza e Saúde', 'Móveis e Decoração', 'Esporte e Lazer', 'Brinquedos']
+				option(selected=(getParam('category') === category))=category
+		button.button.button--purple(type="submit", aria-label="Enviar formulário") PESQUISAR PRODUTO

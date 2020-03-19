@@ -1,3 +1,6 @@
+const moneyToFloat = string => string.replace(/R\$ |\./g, '').replace(',', '.')
+const getParam = param => new URL(url).searchParams.get(param)
+
 const formatDate = date => {
 	const formatted = {
 		day: `0${date.getDate()}`.slice(-2),
@@ -7,6 +10,15 @@ const formatDate = date => {
 		minutes: `0${date.getUTCMinutes()}`.slice(-2),
 	}
 	return `${formatted.day}/${formatted.month}/${formatted.year} - ${formatted.hours}:${formatted.minutes}`
+}
+
+const formatMoney = value => {
+	let formattedValue = value.toFixed(2)
+	formattedValue = formattedValue.toString().replace(/\D/g,'')
+	formattedValue = formattedValue.toString().replace(/(\d)(\d{8})$/,'$1.$2')
+	formattedValue = formattedValue.toString().replace(/(\d)(\d{5})$/,'$1.$2')
+	formattedValue = formattedValue.toString().replace(/(\d)(\d{2})$/,'$1,$2')
+	return `R$ ${formattedValue}`
 }
 
 const getSchemaJSON = () => {
@@ -44,5 +56,8 @@ const getSchemaJSON = () => {
 
 module.exports = {
 	getSchemaJSON,
-	formatDate
+	formatDate,
+	formatMoney,
+	moneyToFloat,
+	getParam,
 }

@@ -1,0 +1,32 @@
+.products
+	+columns(3)
+
+.product
+	box-shadow: $shadow-1
+	text-align: center
+	transition: 250ms
+	&__wrapper
+		padding: 10px
+	&__image
+		+size(100%, 300px)
+		object-fit: cover
+	&__content
+		+flex($d: column)
+		padding: 0 10px 10px
+	&__category
+		+font(.9rem, $c: $purple, $t: uppercase)
+		margin-bottom: 5px
+	&__value
+		+font(2rem)
+		margin: 10px 0
+	&:hover
+		transform: translate(-1px, -2px)
+
++tablet
+	.products
+		+columns(1)
+	.product
+		&__wrapper
+			padding: 10px 0
+		&__image
+			height: 250px

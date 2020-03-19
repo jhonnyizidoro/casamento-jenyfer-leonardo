@@ -14,6 +14,7 @@ router.get('/', (req, res) => {
 			seo,
 			guests
 		})
+		req.session.destroy()
 	}).catch(err => {
 		req.session.alert = {
 			type: 'Erro!',

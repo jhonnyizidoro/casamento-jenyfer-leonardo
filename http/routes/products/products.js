@@ -8,11 +8,12 @@ router.get('/', (req, res) => {
 		description: 'Produtos disponíveis para serem comprados na lista virtual. Lista virtual de presente de casamento.',
 		keywords: 'site de casamento, lista de convidados, jenyfer e leonardo, presenças confirmadas, pedido de musica, lista virtual, produtos, presentes de casamento',
 	}
-	getProducts().then(products => {
+	getProducts(req.query).then(products => {
 		res.render('products', {
 			seo,
 			products
 		})
+		req.session.destroy()
 	}).catch(err => {
 		req.session.alert = {
 			type: 'Erro!',
@@ -31,11 +32,12 @@ router.get('/cadastrar', (req, res) => {
 	res.render('productsForm', {
 		seo,
 	})
+	req.session.destroy()
 })
 
-router.post('/', (req, res) => {
-	req.body.image = req.files.image.data.toString('base64')
-	req.body.value = req.body.value.replace(/R\$ |\./g, '').replace(',', '.')
+router.post('/cadastrar', (req, res) => {
+	req.body.image = `data:${req.files.image.mimetype};charset=utf-8;base64,${req.files.image.data.toString('base64')}`
+	req.body.value = moneyToFloat(req.body.value)
 	insertProduct(req.body).then(() => {
 		req.session.alert = {
 			type: 'Sucesso!',

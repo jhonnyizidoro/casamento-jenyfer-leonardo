@@ -1,10 +1,10 @@
-section.products
+section.products.container
 	each product in products
 		.product__wrapper
 			.product
-				figure.product__figure
-					img.product__image(data-src=`/images/products/${product.name}.jpg`, alt=product.name, title=product.name, loading="lazy")
-				h2.product__name=product.name
-				.product__category=product.category
-				.product__value=product.value
-				button.button.button--orange COMPRAR
+				img.product__image(data-src=product.image, alt=product.name, title=product.name, loading="lazy")
+				.product__content
+					.product__category=product.category
+					h2.product__name=product.name
+					.product__value=formatMoney(product.value)
+					button.button.button--orange COMPRAR
