@@ -26,10 +26,24 @@ const payment = () => {
 const fetchPaymentId = data => {
 	fetch('/pagamento', {
 		method: 'POST',
-		body: JSON.stringify(data)
+		body: JSON.stringify(data),
+		headers: {
+			'Content-Type': 'application/json'
+		},
 	}).then(res => res.json())
-		.then(data => console.log(data))
+		.then(data => openCheckout(data.id))
 		.catch(err => console.log(err))
+}
+
+const openCheckout = id => {
+	const form = document.createElement('form')
+	const script = document.createElement('script')
+	script.src = 'https://www.mercadopago.com.br/integrations/v1/web-payment-checkout.js'
+	script.setAttribute('data-preference-id', id)
+	form.appendChild(script)
+	form.style.display = 'none'
+	document.body.appendChild(form)
+	on('load', script, () => form.querySelector('button').click())
 }
 
 export {

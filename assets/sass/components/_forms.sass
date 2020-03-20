@@ -52,6 +52,7 @@
 	+position(0, 0, $p: fixed)
 	+size(100%)
 	+flex(center, center)
+	background: rgba($black, .5)
 	visibility: hidden
 	z-index: 4
 	&__wrapper
@@ -76,7 +77,7 @@
 		>*:nth-child(1)
 			margin-right: 5px
 	&--visible
-		backdrop-filter: blur(15px) brightness(.5)
+		backdrop-filter: blur(15px)
 		transition: 1500ms
 		visibility: visible
 		.payment

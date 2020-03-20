@@ -17,7 +17,7 @@ const getProduct = id => new Promise((resolve, reject) => {
 	const query = `SELECT * FROM products WHERE id = ${db.escape(id)}`
 	db.query(query, (error, [result]) => {
 		if (error) {
-			reject(error.sqlMessage)
+			reject(error)
 		} else {
 			resolve(result)
 		}

@@ -5,7 +5,8 @@ const assets = require('express-asset-versions'),
 	express = require('express'),
 	env = require('./env'),
 	session = require('express-session'),
-	fileUpload = require('express-fileupload')
+	fileUpload = require('express-fileupload'),
+	bodyParser = require('body-parser')
 
 //Init express
 const app = express()
@@ -22,6 +23,7 @@ app.enable('trust proxy')
 
 //Middleware
 app.use(compression())
+app.use(bodyParser.json())
 app.use(express.urlencoded({ extended: false }))
 app.use('/', express.static(`${__dirname}/public`))
 app.use('/', express.static(`${__dirname}/public/global`))
