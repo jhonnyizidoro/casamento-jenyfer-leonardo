@@ -4,6 +4,7 @@
 	"description": "Weeding Website - PWA - SEO",
 	"main": "index.js",
 	"scripts": {
+		"start": "node index.js",
 		"watch": "gulp watch"
 	},
 	"keywords": [
