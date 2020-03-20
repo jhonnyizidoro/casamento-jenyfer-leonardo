@@ -1,6 +1,10 @@
 module.exports = {
 	APP_NAME: 'Jenyfer e Leonardo',
 	GOOGLE_API_KEY: 'AIzaSyDCa_AjVSWpEZ3CVhhSUnE0EydPSR_KpNY',
+	MERCADOPAGO: {
+		PUBLIC_KEY: 'TEST-fd6a5f4d-ec46-42a6-aa78-3880f3f67a77',
+		ACCESS_TOKEN: 'TEST-3339229303629089-072417-db80da68181e2bb6992e6f5a12ee8a58-160338893',
+	},
 	DATABASE: {
 		HOST: 'localhost',
 		NAME: 'wedding',

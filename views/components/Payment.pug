@@ -1,0 +1,8 @@
+form.payment
+	.payment__wrapper
+		input(type="hidden", name="id")
+		input.payment__input(type="text", required, placeholder="Seu nome completo", aria-label="Seu nome completo", name="name")
+		textarea.payment__textarea(placeholder="Deixe uma mensagem", aria-label="Deixe uma mensagem para os noivos", name="message")
+		.payment__buttons
+			button.button.button--purple(type="button", aria-label="Clique para cancelar") CANCELAR
+			button.button.button--orange(type="submit", aria-label="Clique para prosseguir") PROSSEGUIR

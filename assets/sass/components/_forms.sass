@@ -48,6 +48,44 @@
 	&__select
 		flex-grow: 1
 
+.payment
+	+position(0, 0, $p: fixed)
+	+size(100%)
+	+flex(center, center)
+	visibility: hidden
+	z-index: 4
+	&__wrapper
+		background: $white
+		width: 400px
+		opacity: 0
+		padding: 20px
+	&__input,
+	&__textarea
+		+font(1.5rem, $f: 'Open Sans Condensed')
+		border: 1px solid $light
+		width: 100%
+		margin-bottom: 7px
+		padding: 10px 7px
+		&::placeholder
+			color: $light
+	&__textarea
+		height: 8rem
+	&__buttons
+		+flex($g: 1, $b: 0)
+		display: none
+		>*:nth-child(1)
+			margin-right: 5px
+	&--visible
+		backdrop-filter: blur(15px) brightness(.5)
+		transition: 1500ms
+		visibility: visible
+		.payment
+			&__wrapper
+				opacity: 1
+				transition: 350ms
+			&__buttons
+				display: flex
+
 +tablet
 	.default
 		margin: 0 5%
@@ -58,3 +96,7 @@
 		&__input,
 		&__select
 			margin: 0 0 10px
+	.payment
+		&__wrapper
+			margin: 0 10px
+			width: auto

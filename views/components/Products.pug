@@ -7,4 +7,4 @@ section.products.container
 					.product__category=product.category
 					h2.product__name=product.name
 					.product__value=formatMoney(product.value)
-					button.button.button--orange COMPRAR
+					button.button.button--orange(type="button", aria-label="Clique para comprar o produto", id=product.id) COMPRAR
