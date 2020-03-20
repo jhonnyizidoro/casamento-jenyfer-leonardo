@@ -2,7 +2,7 @@
 	"name": "casamento-jenyfer-leonardo",
 	"version": "1.0.0",
 	"description": "Weeding Website - PWA - SEO",
-	"main": "app.js",
+	"main": "index.js",
 	"scripts": {
 		"watch": "gulp watch"
 	},
