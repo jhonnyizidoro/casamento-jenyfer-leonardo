@@ -4,8 +4,7 @@
 	"description": "Weeding Website - PWA - SEO",
 	"main": "app.js",
 	"scripts": {
-		"watch": "gulp watch",
-		"build": "gulp build"
+		"watch": "gulp watch"
 	},
 	"keywords": [
 		"weeding",
