@@ -16,7 +16,7 @@ Object.assign(global, env)
 Object.assign(global, helpers)
 
 //App config
-app.set('port', 80)
+app.set('port', process.env.PORT || 80)
 app.set('views', `${__dirname}/views`)
 app.set('view engine', 'pug')
 app.enable('trust proxy')
@@ -53,4 +53,4 @@ app.use((err, req, res, next) => {
 })
 
 // Init Server
-app.listen(80, () => console.log('server On!'))
+app.listen(process.env.PORT || 80, () => console.log('server On!'))
