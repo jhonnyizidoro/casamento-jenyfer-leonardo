@@ -9,32 +9,32 @@ const assets = require('express-asset-versions'),
 	bodyParser = require('body-parser')
 
 //Init express
-const index = express()
+const app = express()
 
 //Global scope
 Object.assign(global, env)
 Object.assign(global, helpers)
 
 //App config
-index.set('port', process.env.PORT || 80)
-index.set('views', `${__dirname}/views`)
-index.set('view engine', 'pug')
-index.enable('trust proxy')
+app.set('port', 80)
+app.set('views', `${__dirname}/views`)
+app.set('view engine', 'pug')
+app.enable('trust proxy')
 
 //Middleware
-index.use(compression())
-index.use(bodyParser.json())
-index.use(express.urlencoded({ extended: false }))
-index.use('/', express.static(`${__dirname}/public`))
-index.use('/', express.static(`${__dirname}/public/global`))
-index.use(assets('/', `${__dirname}/public`))
-index.use(fileUpload({}))
-index.use(session({
+app.use(compression())
+app.use(bodyParser.json())
+app.use(express.urlencoded({ extended: false }))
+app.use('/', express.static(`${__dirname}/public`))
+app.use('/', express.static(`${__dirname}/public/global`))
+app.use(assets('/', `${__dirname}/public`))
+app.use(fileUpload({}))
+app.use(session({
 	saveUninitialized: true,
 	secret: 'ecNewNodeJS',
 	resave: true,
 }))
-index.use((req, res, next) => {
+app.use((req, res, next) => {
 	global.host = `${req.protocol}://${req.get('host')}`
 	global.url = `${global.host}${req.url}`
 	global.path = req.url
@@ -43,14 +43,14 @@ index.use((req, res, next) => {
 })
 
 //Router
-routes(index)
+routes(app)
 
 // error handler
-index.use((err, req, res, next) => {
+app.use((err, req, res, next) => {
 	console.log(err)
 	res.status(err.status || 500)
 	res.render('error')
 })
 
 // Init Server
-index.listen(process.env.PORT || 80, () => console.log('server On!'))
+app.listen(80, () => console.log('server On!'))
